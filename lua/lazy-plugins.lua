@@ -28,6 +28,11 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+
   require 'kickstart/plugins/gitsigns',
 
   require 'kickstart/plugins/which-key',
@@ -42,12 +47,41 @@ require('lazy').setup({
 
   require 'kickstart/plugins/tokyonight',
 
-  require 'kickstart/plugins/todo-comments',
-
   require 'kickstart/plugins/mini',
 
   require 'kickstart/plugins/treesitter',
 
+  require 'kickstart/plugins/nvim-tree',
+
+  require 'kickstart/plugins/alpha',
+
+  require 'kickstart/plugins/auto-session',
+
+  require 'kickstart/plugins/bufferline',
+
+  require 'kickstart/plugins/lualine',
+
+  require 'kickstart/plugins/dressing',
+
+  require 'kickstart/plugins/vim-maximizer',
+
+  require 'kickstart/plugins/indent-blankline',
+
+  require 'kickstart/plugins/comment',
+
+  require 'kickstart/plugins/todo-comment',
+
+  require 'kickstart/plugins/subsitute',
+
+  require 'kickstart/plugins/surround',
+
+  require 'kickstart/plugins/mason',
+
+  require 'kickstart/plugins/trouble',
+
+  require 'kickstart/plugins/linting',
+
+  require 'kickstart/plugins/autopairs',
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
