@@ -25,6 +25,9 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- Save file
+vim.keymap.set('i', '<C-s>', '<C-\\><C-o>:w<CR>', { desc = 'Save file in Insert mode' })
+
 -- Keybinds to make split navigation easier.
 -- Use CTRL+<hjkl> to switch between windows
 vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
@@ -48,10 +51,16 @@ vim.keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab'
 vim.keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
 
 -- Move the Highligted text up and down
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move highlighted text down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move highlighted text up' })
 
--- [[ Basic Autocommands ]]
+vim.keymap.set('i', '<C-c>', '<Esc>', { desc = 'Superior way of exiting insert mode to normal mode' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank highlighted text to system clipboard' })
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank the line to system clipboard' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without putting in register' })
+
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
